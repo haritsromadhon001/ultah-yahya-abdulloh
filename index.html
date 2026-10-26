@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yahya Abdulloh 🎉 | Hadiah Spesial Ulang Tahun</title>
+  <meta name="description" content="Website kartu ucapan ulang tahun interaktif dan penuh kejutan untuk Yahya Abdulloh. A Little Surprise, A Lot of Happiness!">
+  
+  <!-- Favicon Logo Browser Tab (Menggantikan icon bola dunia default) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  
+  <!-- Google Fonts: Fredoka untuk judul ceria & Quicksand untuk teks hangat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti Library untuk efek pesta yang memukau -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Decorations: Awan, Bintang & Balon Mengambang -->
+  <div class="sky-background" aria-hidden="true">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="floating-balloon balloon-left">🎈</div>
+    <div class="floating-balloon balloon-right">🎈</div>
+    <div class="twinkle-star star-1">✨</div>
+    <div class="twinkle-star star-2">⭐</div>
+    <div class="twinkle-star star-3">✨</div>
+    <div class="twinkle-star star-4">⭐</div>
+  </div>
+
+  <!-- Top Navigation Header: Brand Logo & Audio Controller -->
+  <header class="top-nav-bar">
+    <div class="brand-logo-pill">
+      <img src="favicon.svg" alt="Logo Kuma" class="brand-logo-icon">
+      <span class="brand-logo-title">Yahya Abdulloh</span>
+      <span class="brand-logo-sparkle">🎉</span>
+    </div>
+
+    <!-- Theme Mode Toggle Controller (Terang ☀️ / Gelap 🌙) -->
+    <div class="theme-toggle-container">
+      <button id="themeToggleBtn" class="theme-btn" title="Ganti Tema Terang / Gelap" aria-label="Toggle Tema Gelap">
+        <span class="theme-icon" id="themeIcon">🌙</span>
+        <span class="theme-text" id="themeText">Mode: Gelap</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Progress Tracker -->
+  <nav class="progress-bar-container" aria-label="Progress Petualangan">
+    <div class="progress-step active" data-step="1" title="Selamat Datang">1</div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="2" title="Perayaan & Kue">2</div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="3" title="Kartu Ucapan">3</div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="4" title="Kotak Doa">4</div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="5" title="Penutup Ceria">5</div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="adventure-container">
+
+    <!-- ==============================================
+         BAGIAN A: WELCOME SCREEN
+         ============================================== -->
+    <section id="sectionWelcome" class="scene active">
+      <div class="card-glass welcome-card">
+        <div class="tag-badge">✨ A Little Surprise, A Lot of Happiness! ✨</div>
+        <p class="whisper-text">Psst... ada sesuatu buat kamu!</p>
+        
+        <h1 class="main-title">Hai, Yahya Abdulloh! 🎉</h1>
+        <p class="subtitle">Hari ini ada kejutan kecil khusus buat kamu.</p>
+
+        <!-- Maskot Anak Pondok / Santri Keren dengan Sarung & Kotak Hadiah -->
+        <div class="mascot-wrapper" id="mascotWelcome">
+          <svg class="kawaii-bear-svg santri-pondok-svg" viewBox="0 0 200 230" width="180" height="210" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Pattern Sarung Kotak-kotak Santri Pondok -->
+              <pattern id="sarungPlaid" width="16" height="16" patternUnits="userSpaceOnUse">
+                <rect width="16" height="16" fill="#4A7C72" />
+                <rect width="8" height="16" fill="#3D6960" />
+                <rect width="16" height="8" fill="#588D82" />
+                <line x1="0" y1="8" x2="16" y2="8" stroke="#FFE69A" stroke-width="0.8" opacity="0.7" />
+                <line x1="8" y1="0" x2="8" y2="16" stroke="#DDF3FF" stroke-width="0.8" opacity="0.7" />
+              </pattern>
+              <linearGradient id="peciPondokLg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#212F3D" />
+                <stop offset="100%" stop-color="#17202A" />
+              </linearGradient>
+              <linearGradient id="sorbanPondok" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#80B8A8" />
+                <stop offset="100%" stop-color="#599585" />
+              </linearGradient>
+            </defs>
+
+            <!-- Kaki & Sandal Santri -->
+            <rect x="75" y="210" width="16" height="12" rx="4" fill="#FDDCB8" />
+            <rect x="109" y="210" width="16" height="12" rx="4" fill="#FDDCB8" />
+            <!-- Sandal Jepit / Sandal Santri -->
+            <path d="M 72 220 Q 83 218 94 220 L 93 225 Q 83 227 73 225 Z" fill="#24344D" />
+            <path d="M 83 218 L 83 215" stroke="#FF6B8B" stroke-width="2" />
+            <path d="M 106 220 Q 117 218 128 220 L 127 225 Q 117 227 107 225 Z" fill="#24344D" />
+            <path d="M 117 218 L 117 215" stroke="#FF6B8B" stroke-width="2" />
+
+            <!-- SARUNG SANTRI MOTIF KOTAK-KOTAK KHAS PONDOK -->
+            <path d="M 60 162 L 140 162 L 148 212 L 52 212 Z" fill="url(#sarungPlaid)" stroke="#2D4C44" stroke-width="1.5" />
+            <!-- Lipatan Wiron Tengah Sarung -->
+            <path d="M 96 162 L 96 212 L 104 212 L 104 162" fill="#365C53" opacity="0.6" />
+            <line x1="96" y1="162" x2="96" y2="212" stroke="#FFE69A" stroke-width="1.2" opacity="0.8" />
+
+            <!-- Baju Koko Santri Putih Bersih -->
+            <path d="M 54 132 Q 100 126 146 132 L 140 166 Q 100 170 60 166 Z" fill="#FFFFFF" stroke="#D5E5F2" stroke-width="2" />
+            <!-- Saku Baju Koko di Dada -->
+            <rect x="120" y="140" width="14" height="16" rx="2" fill="#F4F9FD" stroke="#D5E5F2" stroke-width="1" />
+            <!-- Kancing Baju Koko -->
+            <line x1="100" y1="130" x2="100" y2="162" stroke="#E2ECF5" stroke-width="2" />
+            <circle cx="100" cy="138" r="2" fill="#24344D" />
+            <circle cx="100" cy="148" r="2" fill="#24344D" />
+            <circle cx="100" cy="158" r="2" fill="#24344D" />
+
+            <!-- Sorban Disampirkan di Pundak Kiri (Gaya Khas Santri Pondok) -->
+            <path d="M 52 130 Q 64 125 76 130 L 78 185 Q 64 188 54 185 Z" fill="url(#sorbanPondok)" stroke="#4A7C70" stroke-width="1.5" />
+            <!-- Garis Rumbai / Motif Sorban Santri -->
+            <line x1="58" y1="140" x2="72" y2="140" stroke="#FFFFFF" stroke-width="1" opacity="0.7" />
+            <line x1="56" y1="160" x2="74" y2="160" stroke="#FFFFFF" stroke-width="1" opacity="0.7" />
+            <line x1="56" y1="183" x2="76" y2="183" stroke="#FFE69A" stroke-width="1.5" />
+            <!-- Rumbai-rumbai bawah sorban -->
+            <path d="M 54 185 L 54 190 M 59 185 L 59 190 M 64 185 L 64 190 M 69 185 L 69 190 M 74 185 L 74 190" stroke="#FFE69A" stroke-width="1" stroke-linecap="round" />
+
+            <!-- Leher -->
+            <rect x="91" y="116" width="18" height="16" rx="5" fill="#FDDCB8" />
+
+            <!-- Kepala & Wajah Chibi Santri -->
+            <ellipse cx="100" cy="80" rx="48" ry="44" fill="#FFE5CC" />
+
+            <!-- Telinga Santri -->
+            <circle cx="52" cy="80" r="9" fill="#FDDCB8" />
+            <circle cx="148" cy="80" r="9" fill="#FDDCB8" />
+
+            <!-- Rambut Rapi Khas Santri -->
+            <path d="M 52 60 Q 58 70 54 80" stroke="#24344D" stroke-width="4.5" fill="none" stroke-linecap="round" />
+            <path d="M 148 60 Q 142 70 146 80" stroke="#24344D" stroke-width="4.5" fill="none" stroke-linecap="round" />
+
+            <!-- Peci Hitam Songkok Khas Anak Pondok -->
+            <path d="M 48 58 C 55 20, 145 20, 152 58 Z" fill="url(#peciPondokLg)" />
+            <!-- List Emas & Lipatan Songkok -->
+            <path d="M 48 58 Q 100 65 152 58" stroke="#E5C058" stroke-width="4" fill="none" stroke-linecap="round" />
+            <rect x="94" y="24" width="12" height="4" rx="2" fill="#E5C058" opacity="0.85" />
+
+            <!-- Alis Santri Ramah -->
+            <path d="M 72 68 Q 82 63 90 68" stroke="#24344D" stroke-width="3" fill="none" stroke-linecap="round" />
+            <path d="M 110 68 Q 118 63 128 68" stroke="#24344D" stroke-width="3" fill="none" stroke-linecap="round" />
+
+            <!-- Mata Chibi Berbinar Bahagia -->
+            <ellipse cx="80" cy="80" rx="6.5" ry="8.5" fill="#24344D" />
+            <circle cx="82" cy="77" r="3" fill="#FFFFFF" />
+            <ellipse cx="120" cy="80" rx="6.5" ry="8.5" fill="#24344D" />
+            <circle cx="122" cy="77" r="3" fill="#FFFFFF" />
+
+            <!-- Blush Pipi Pink Hangat -->
+            <ellipse cx="68" cy="92" rx="9" ry="5.5" fill="#FFB4C4" />
+            <ellipse cx="132" cy="92" rx="9" ry="5.5" fill="#FFB4C4" />
+
+            <!-- Senyum Ceria Sahabat Sejati -->
+            <path d="M 91 92 Q 100 103 109 92" stroke="#E63956" stroke-width="3.5" fill="none" stroke-linecap="round" />
+
+            <!-- Tangan Memegang Kotak Kado -->
+            <circle cx="62" cy="155" r="13" fill="#FDDCB8" />
+            <circle cx="138" cy="155" r="13" fill="#FDDCB8" />
+
+            <!-- Kotak Kado Interaktif Spesial Buat Yahya -->
+            <g class="gift-box-svg">
+              <rect x="72" y="140" width="56" height="46" rx="8" fill="#FFD6E0" stroke="#FFAABF" stroke-width="2" />
+              <rect x="67" y="133" width="66" height="14" rx="5" fill="#FFB4C4" stroke="#FF8EA6" stroke-width="2" />
+              <rect x="94" y="133" width="12" height="53" fill="#FFE69A" />
+              <rect x="72" y="158" width="56" height="9" fill="#FFE69A" />
+              <ellipse cx="92" cy="128" rx="8" ry="6" fill="#FFE69A" stroke="#E6C25B" stroke-width="1.5" />
+              <ellipse cx="108" cy="128" rx="8" ry="6" fill="#FFE69A" stroke="#E6C25B" stroke-width="1.5" />
+              <circle cx="100" cy="129" r="4" fill="#FF6B8B" />
+            </g>
+          </svg>
+        </div>
+
+        <button id="btnOpenSurprise" class="btn-playful btn-primary pulse-btn">
+          <span>Buka Kejutannya! 🎁</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         BAGIAN B: BIRTHDAY CELEBRATION (Kue & Lilin)
+         ============================================== -->
+    <section id="sectionCelebration" class="scene">
+      <div class="card-glass celebration-card">
+        <div class="sparkle-heading">
+          <span class="sparkle-icon">✨</span>
+          <span class="tag-badge">Special Day!</span>
+          <span class="sparkle-icon">✨</span>
+        </div>
+        
+        <h2 class="celebration-title">HAPPY BIRTHDAY, YAHYA! 🎂</h2>
+        <p class="celebration-sub">Selamat ulang tahun, sahabat terbaikku!</p>
+
+        <!-- Ilustrasi Kue Ulang Tahun Interaktif dengan Lilin -->
+        <div class="cake-container" id="birthdayCake" title="Klik lilin untuk meniupnya!">
+          <div class="cake-tooltip" id="cakeTooltip">👆 Klik lilin untuk meniupnya! 🌬️</div>
+          
+          <svg class="cake-svg" viewBox="0 0 240 230" width="220" height="210" xmlns="http://www.w3.org/2000/svg">
+            <!-- Piring Kue -->
+            <ellipse cx="120" cy="210" rx="100" ry="18" fill="#FFF8E7" stroke="#DCD6FF" stroke-width="4" />
+            <ellipse cx="120" cy="207" rx="92" ry="14" fill="#FFFFFF" />
+
+            <!-- Lapisan Bawah Kue -->
+            <path d="M 40 160 Q 120 180 200 160 L 200 200 Q 120 220 40 200 Z" fill="#FFE69A" />
+            <path d="M 40 160 Q 120 180 200 160 L 200 170 Q 120 190 40 170 Z" fill="#FFD6E0" />
+            <!-- Hiasan Stroberi & Krim Bawah -->
+            <circle cx="55" cy="180" r="5" fill="#FF6B8B" />
+            <circle cx="95" cy="185" r="5" fill="#A8D8F0" />
+            <circle cx="145" cy="185" r="5" fill="#FF6B8B" />
+            <circle cx="185" cy="180" r="5" fill="#A8D8F0" />
+
+            <!-- Lapisan Atas Kue -->
+            <path d="M 60 115 Q 120 132 180 115 L 180 160 Q 120 180 60 160 Z" fill="#DDF3FF" />
+            <!-- Krim Meleleh (Frosting Drips) -->
+            <path d="M 60 115 Q 75 135 85 125 Q 95 142 110 126 Q 125 140 140 124 Q 155 138 165 122 Q 175 135 180 115 Q 120 132 60 115 Z" fill="#FFF8E7" />
+            <ellipse cx="120" cy="115" rx="60" ry="18" fill="#FFF8E7" stroke="#FFE69A" stroke-width="2" />
+
+            <!-- Topping Buah Ceri/Stroberi -->
+            <circle cx="75" cy="112" r="7" fill="#FF4E72" />
+            <circle cx="120" cy="116" r="8" fill="#FF4E72" />
+            <circle cx="165" cy="112" r="7" fill="#FF4E72" />
+
+            <!-- Tiga Lilin Ulang Tahun -->
+            <!-- Lilin 1 (Kiri) -->
+            <g class="candle-group" id="candle1">
+              <rect x="85" y="70" width="10" height="36" rx="3" fill="#A8D8F0" stroke="#77BFE4" stroke-width="1.5" />
+              <path d="M 85 78 L 95 82 M 85 88 L 95 92" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+              <line x1="90" y1="70" x2="90" y2="62" stroke="#24344D" stroke-width="2" />
+              <ellipse class="flame" cx="90" cy="54" rx="6" ry="10" fill="#FFB703" />
+              <ellipse class="flame inner-flame" cx="90" cy="56" rx="3" ry="6" fill="#FFF275" />
+            </g>
+            <!-- Lilin 2 (Tengah) -->
+            <g class="candle-group" id="candle2">
+              <rect x="115" y="62" width="10" height="42" rx="3" fill="#DCD6FF" stroke="#B8ADF8" stroke-width="1.5" />
+              <path d="M 115 72 L 125 76 M 115 82 L 125 86" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+              <line x1="120" y1="62" x2="120" y2="54" stroke="#24344D" stroke-width="2" />
+              <ellipse class="flame" cx="120" cy="46" rx="7" ry="11" fill="#FFB703" />
+              <ellipse class="flame inner-flame" cx="120" cy="48" rx="3.5" ry="7" fill="#FFF275" />
+            </g>
+            <!-- Lilin 3 (Kanan) -->
+            <g class="candle-group" id="candle3">
+              <rect x="145" y="70" width="10" height="36" rx="3" fill="#FFD6E0" stroke="#F5A3B6" stroke-width="1.5" />
+              <path d="M 145 78 L 155 82 M 145 88 L 155 92" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+              <line x1="150" y1="70" x2="150" y2="62" stroke="#24344D" stroke-width="2" />
+              <ellipse class="flame" cx="150" cy="54" rx="6" ry="10" fill="#FFB703" />
+              <ellipse class="flame inner-flame" cx="150" cy="56" rx="3" ry="6" fill="#FFF275" />
+            </g>
+          </svg>
+        </div>
+
+        <div id="candleWishStatus" class="candle-wish-status">
+          Lilin menyala hangat. Tiup lilinnya yuk! ✨
+        </div>
+
+        <!-- Maskot Mini Ceria -->
+        <div class="mini-mascot-speech">
+          <div class="speech-bubble">"Semoga panjang umur, berkah, dan sukses selalu, Yahya!" 🤲✨</div>
+        </div>
+
+        <div class="button-group">
+          <button id="btnBlowCandles" class="btn-playful btn-secondary">
+            <span>Tiup Semua Lilin 🕯️💨</span>
+          </button>
+          <button id="btnGoToCard" class="btn-playful btn-primary pulse-btn">
+            <span>Gas, Baca Ucapannya! 💌</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         BAGIAN C: THE BIRTHDAY CARD
+         ============================================== -->
+    <section id="sectionCard" class="scene">
+      <div class="physical-letter-wrapper">
+        <!-- Tombol Panah Kembali ke Awal di Atas Kartu Ucapan -->
+        <div class="card-top-nav-bar">
+          <button id="btnBackToStartFromCard" class="card-arrow-btn" title="Ulangi Petualangan dari Awal">
+            <span class="arrow-icon">↩️</span>
+            <span class="arrow-text">Ulangi dari Awal</span>
+          </button>
+        </div>
+
+        <div class="letter-top-deco">
+          <span class="deco-item">🎀</span>
+          <span class="deco-item">🌟</span>
+          <span class="deco-item">🎂</span>
+          <span class="deco-item">🌟</span>
+          <span class="deco-item">🎀</span>
+        </div>
+
+        <article class="birthday-card-paper" id="mainLetter">
+          <div class="card-stamp">
+            <span class="stamp-icon"><img src="favicon.svg" width="22" height="22" alt="Ustadz Stamp" style="vertical-align:middle;margin-right:2px;">🎈</span>
+            <span class="stamp-text">FOR YAHYA</span>
+          </div>
+
+          <header class="card-header">
+            <h2 class="card-greeting">Halo, Yahya Abdulloh! 🎂</h2>
+            <p class="card-subgreeting">Selamat ulang tahun, sahabat!</p>
+          </header>
+
+          <div class="card-body">
+            <p class="letter-p">
+              Alhamdulillah, bertambah lagi satu kesempatan untuk menjalani hidup, belajar hal baru, dan mengejar berbagai impian.
+            </p>
+            
+            <p class="letter-p">
+              Di hari spesial ini, aku ingin mendoakan semoga kamu selalu diberikan kesehatan, umur yang berkah, hati yang tenang, rezeki yang baik, serta kebahagiaan dalam setiap langkahmu.
+            </p>
+
+            <p class="letter-p">
+              Semoga segala urusanmu dimudahkan, cita-cita yang sedang kamu perjuangkan perlahan tercapai, dan setiap tantangan bisa kamu hadapi dengan penuh semangat dan kesabaran.
+            </p>
+
+            <p class="letter-p">
+              Kalau suatu hari perjalanan terasa berat, semoga kamu selalu punya alasan untuk bangkit dan terus melangkah. Tidak harus selalu sempurna, yang penting terus bertumbuh menjadi pribadi yang lebih baik.
+            </p>
+
+            <p class="letter-p">
+              Pokoknya, semoga tahun ini dipenuhi kabar baik, kesempatan baru, orang-orang tulus, dan banyak momen yang bikin kamu tersenyum.
+            </p>
+
+            <p class="letter-p highlight-p">
+              Sekali lagi, selamat ulang tahun, Yahya! Semoga semua doa baik yang kamu panjatkan menemukan jalannya untuk menjadi kenyataan.
+            </p>
+
+            <p class="letter-p funny-p">
+              Tetap semangat, jangan lupa bahagia, dan jangan lupa traktiran kalau sudah sukses! 😂🎉
+            </p>
+          </div>
+
+          <footer class="card-footer">
+            <p class="closing-sign">Dari teman dekatmu, yang ikut mendoakan hal-hal baik untukmu. 💙</p>
+            <div class="wax-seal">
+              <span>Sahabat</span>
+            </div>
+          </footer>
+        </article>
+
+        <div class="card-action-bar">
+          <button id="btnBackToCelebration" class="btn-playful btn-secondary btn-sm">
+            <span>⬅️ Kembali</span>
+          </button>
+          <button id="btnGoToWishes" class="btn-playful btn-primary pulse-btn">
+            <span>Pilih Doa Baikmu! 🌟</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         BAGIAN D: KOTAK DOA DAN HARAPAN
+         ============================================== -->
+    <section id="sectionWishes" class="scene">
+      <div class="card-glass wishes-box-card">
+        <div class="tag-badge">🎁 Kotak Doa dan Harapan 🎁</div>
+        <h2 class="section-title">Pilih Amplop Doa Khusus Buat Kamu</h2>
+        <p class="section-desc">Pilih salah satu (atau buka semuanya!) amplop di bawah ini untuk melihat pesan dan doa khusus untuk langkahmu ke depan:</p>
+
+        <!-- 3 Pilihan Amplop Interaktif -->
+        <div class="envelopes-grid">
+          <!-- Amplop 1 -->
+          <div class="envelope-item" data-wish="future" id="envelopeFuture" tabindex="0" role="button" aria-label="Buka amplop Untuk Masa Depanku">
+            <div class="envelope-icon">🚀</div>
+            <h3 class="envelope-title">Untuk Masa Depanku</h3>
+            <p class="envelope-sub">Tentang impian, karir & tujuan besar</p>
+            <span class="envelope-badge">Buka Pesan ✉️</span>
+          </div>
+
+          <!-- Amplop 2 -->
+          <div class="envelope-item" data-wish="happiness" id="envelopeHappiness" tabindex="0" role="button" aria-label="Buka amplop Untuk Kebahagiaanku">
+            <div class="envelope-icon">☀️</div>
+            <h3 class="envelope-title">Untuk Kebahagiaanku</h3>
+            <p class="envelope-sub">Ketenangan hati, senyum & rasa syukur</p>
+            <span class="envelope-badge">Buka Pesan ✉️</span>
+          </div>
+
+          <!-- Amplop 3 -->
+          <div class="envelope-item" data-wish="journey" id="envelopeJourney" tabindex="0" role="button" aria-label="Buka amplop Untuk Perjalananku">
+            <div class="envelope-icon">🌱</div>
+            <h3 class="envelope-title">Untuk Perjalananku</h3>
+            <p class="envelope-sub">Proses bertumbuh, ketabahan & sahabat</p>
+            <span class="envelope-badge">Buka Pesan ✉️</span>
+          </div>
+        </div>
+
+        <div class="button-group mt-large">
+          <button id="btnBackToCard" class="btn-playful btn-secondary btn-sm">
+            <span>⬅️ Baca Kartu Lagi</span>
+          </button>
+          <button id="btnGoToEnd" class="btn-playful btn-primary">
+            <span>Lanjut ke Penutup 🎈</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         BAGIAN E: PENUTUP & INTERAKSI EKSTRA
+         ============================================== -->
+    <section id="sectionFinale" class="scene">
+      <div class="card-glass finale-card">
+        <!-- Tombol Panah Kembali ke Awal di Atas Kartu Ucapan -->
+        <div class="card-top-nav-bar">
+          <button id="btnRestartJourney" class="card-arrow-btn" title="Ulangi Petualangan dari Awal" aria-label="Ulangi Petualangan dari Awal">
+            <span class="arrow-icon">↩️</span>
+            <span class="arrow-text">Ulangi dari Awal</span>
+          </button>
+        </div>
+
+        <div class="finale-mascot">
+          <img src="favicon.svg" width="75" height="75" alt="Avatar Yahya" style="filter:drop-shadow(0 4px 12px rgba(44,62,80,0.15));animation:bounceNote 1.5s infinite alternate ease-in-out;">
+        </div>
+        <h2 class="finale-title">Terima Kasih Sudah Menjadi Sahabat Terbaik! 💙</h2>
+        <p class="finale-text">
+          Hari ini dan seterusnya, semoga harimu dipenuhi hal-hal baik dan orang-orang yang tulus mendukungmu. Tetaplah menjadi Yahya yang hebat, rendah hati, dan inspiratif!
+        </p>
+
+        <!-- Kotak Kejutan Interaktif Ekstra -->
+        <div class="interactive-goodies">
+          <button id="btnConfettiBoom" class="goodie-btn">
+            <span class="goodie-icon">🎊</span>
+            <span class="goodie-label">Tembak Confetti!</span>
+          </button>
+          <button id="btnVirtualHug" class="goodie-btn">
+            <span class="goodie-icon">🤗</span>
+            <span class="goodie-label">Kirim Tos & Peluk Virtual!</span>
+          </button>
+          <button id="btnRandomCompliment" class="goodie-btn">
+            <span class="goodie-icon">✨</span>
+            <span class="goodie-label">Pesan Semangat Acak</span>
+          </button>
+        </div>
+
+        <!-- Tempat Pesan Acak Muncul -->
+        <div id="complimentDisplay" class="compliment-box hidden"></div>
+
+        <p class="copyright-note">
+          Dibuat dengan segenap doa & kehangatan untuk <strong>Yahya Abdulloh</strong> 🎈
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       MODAL POPUP UNTUK DETAIL DOA (ENVELOPE MODAL)
+       ============================================== -->
+  <div id="wishModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modalWishTitle">
+    <div class="modal-card">
+      <button id="modalCloseBtn" class="modal-close" aria-label="Tutup pesan">&times;</button>
+      <div class="modal-icon-badge" id="modalWishIcon">🚀</div>
+      <h3 class="modal-title" id="modalWishTitle">Doa untuk Masa Depan</h3>
+      
+      <div class="modal-body" id="modalWishContent">
+        <!-- Konten doa akan diisi secara dinamis oleh JavaScript -->
+      </div>
+      
+      <div class="modal-footer">
+        <button id="modalAamiinBtn" class="btn-playful btn-primary">
+          <span>Aamiin ya Rabbal 'Alamin 🤲✨</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification untuk Interaksi Seru -->
+  <div id="toastNotification" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
